@@ -1,8 +1,10 @@
+@import "variables";
+
 .site-footer {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: $font-family-header;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -16,13 +18,6 @@
 
 .site-footer a:hover {
     border-bottom: #bbc7cc 1px solid;
-}
-
-.poweredby {
-    display: block;
-    width: 45%;
-    float: right;
-    text-align: right;
 }
 
 .copyright {

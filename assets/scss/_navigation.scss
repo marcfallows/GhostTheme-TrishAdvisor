@@ -1,0 +1,48 @@
+.main-nav {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 15;
+    background: $brand-primary;
+
+    .nav {
+
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            float: right;
+
+            li {
+                float: left;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-family: $font-family-header;
+                    text-transform: uppercase;
+                    line-height: $main-nav-height;
+                    font-size: 1.4rem;
+                    height: $main-nav-height;
+                }
+
+                a:link,
+                a:visited {
+                    color: #B8B8B8;
+                }
+
+                &.nav-current a,
+                .nav a:hover,
+                .nav a:active,
+                .nav a:focus {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
