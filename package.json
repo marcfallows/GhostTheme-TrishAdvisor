@@ -1,4 +1,12 @@
 {
   "name": "GhostTheme-TrishAdvisor",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "node-sass": "^2.1.1"
+  },
+  "scripts": {
+    "css:build": "node-sass assets/scss/styles.scss --output assets/css",
+    "css:watch": "npm run css:build -- --watch",
+    "watch": "npm run css:watch"
+  }
 }
