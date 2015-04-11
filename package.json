@@ -6,7 +6,7 @@
   },
   "scripts": {
     "css:build": "node-sass assets/scss/styles.scss --output assets/css",
-    "css:watch": "npm run css:build -- --watch",
+    "css:watch": "node-sass --watch --recursive assets/scss assets/scss/styles.scss --output assets/css",
     "watch": "npm run css:watch"
   }
 }
