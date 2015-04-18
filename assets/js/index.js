@@ -5,7 +5,10 @@
     var $document = $(document);
 
     $document.ready(function () {
+
         var $postContent = $(".post-content");
         $postContent.fitVids();
+
+        $(window).scrolled();
     });
 })(jQuery);

@@ -2,11 +2,12 @@
   "name": "GhostTheme-TrishAdvisor",
   "version": "0.1.0",
   "devDependencies": {
+    "node-bourbon": "^4.2.1-beta1",
     "node-sass": "^2.1.1"
   },
   "scripts": {
-    "css:build": "node-sass assets/scss/styles.scss --output assets/css",
-    "css:watch": "node-sass --watch --recursive assets/scss assets/scss/styles.scss --output assets/css",
+    "css:build": "node-sass --include-path node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets assets/scss/styles.scss --output assets/css",
+    "css:watch": "node-sass --watch --recursive assets/scss --include-path node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets assets/scss/styles.scss --output assets/css",
     "watch": "npm run css:watch"
   }
 }

@@ -3,25 +3,35 @@
 .site-footer {
     position: relative;
     margin: 8rem 0 0 0;
-    padding: 1rem 15px;
+    padding: 8rem 0;
+    text-align: center;
     font-family: $font-family-header;
-    font-size: 1rem;
+    font-size: 1.6rem;
     line-height: 1.75em;
-    color: #BBC7CC;
-}
+    background: $palette-secondary;
+    color: $palette-light;
+    border-top: $palette-secondary-alt solid 5px;
 
-.site-footer a {
-    color: #BBC7CC;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .social {
+        margin: 0 0 4rem 0;
 
-.site-footer a:hover {
-    border-bottom: #bbc7cc 1px solid;
-}
+        a {
+            color: $palette-secondary-alt;
+            font-size: 6rem;
+            text-decoration: none;
+            padding: 0 2rem;
+            @include transition(color $animate-duration-fast ease-in 0s);
 
-.copyright {
-    display: block;
-    width: 45%;
-    float: left;
+            &:hover {
+                color: $palette-light;
+            }
+        }
+    }
+
+    .copyright {
+        a {
+            color: $palette-light;
+            text-decoration: none;
+        }
+    }
 }

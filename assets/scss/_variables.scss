@@ -1,9 +1,18 @@
 
-$main-nav-height: 50px;
-$cover-height: 40vh;
+$main-nav-height: 60px;
+$cover-height: 50vh;
 
-$brand-primary: #000;
+$palette-primary: #5b1ab2;
+$palette-primary-alt: #d5b6ff;
+$palette-secondary: #2bb24d;
+$palette-secondary-alt: #7dcc91;
+$palette-neutral: #fff2e0;
+$palette-text-color: #3A4145;
+$palette-light: #fff;
 
 $font-family-header: "geometrialight", sans-serif;
+$font-family-navigation: "geometrialight", sans-serif;
 $font-family-paragraph: "Lora", serif;
 $font-family-handwriting: "jennasue";
+
+$animate-duration-fast: 250ms;

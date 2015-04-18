@@ -11,9 +11,9 @@ body {
     height: 100%;
     max-height: 100%;
     font-family: $font-family-paragraph;
-    font-size: 1.8rem;
-    line-height: 1.75em;
-    color: #3A4145;
+    font-size: 1.9rem;
+    line-height: 2.1em;
+    color: $palette-text-color;
     -webkit-font-feature-settings: 'kern' 1;
     -moz-font-feature-settings: 'kern' 1;
     -o-font-feature-settings: 'kern' 1;
@@ -33,7 +33,7 @@ h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    color: #2E2E2E;
+    color: $palette-primary;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
     font-family: $font-family-header;
@@ -42,13 +42,10 @@ h4, h5, h6 {
 
 h1 {
     font-size: 5rem;
-    letter-spacing: -2px;
-    text-indent: -3px;
 }
 
 h2 {
     font-size: 3.6rem;
-    letter-spacing: -1px;
 }
 
 h3 {
@@ -68,12 +65,12 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
+    color: $palette-primary;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #111;
+    color: darken($palette-primary, 15%);
 }
 
 p, ul, ol, dl {
@@ -250,15 +247,4 @@ table tbody > tr:nth-child(odd) > th {
 table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th {
     background: transparent;
-}
-
-iframe, .fluid-width-video-wrapper {
-    display: block;
-    margin: 1.75em 0;
-}
-
-/* When a video is inside the fitvids wrapper, drop the
-margin on the iframe, cause it breaks stuff. */
-.fluid-width-video-wrapper iframe {
-    margin: 0;
 }

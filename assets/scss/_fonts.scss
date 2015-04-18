@@ -22,4 +22,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'geometriamedium';
+    src: url('../fonts/geometria-medium.eot');
+    src: url('../fonts/geometria-medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/geometria-medium.woff2') format('woff2'),
+    url('../fonts/geometria-medium.woff') format('woff'),
+    url('../fonts/geometria-medium.ttf') format('truetype'),
+    url('../fonts/geometria-medium.svg#geometriamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Lora);

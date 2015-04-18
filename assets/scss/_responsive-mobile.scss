@@ -65,16 +65,8 @@
         margin: 0 0 2.5rem 0;
     }
 
-    .page-title {
-        font-size: 3rem;
-    }
-
     .post-excerpt p {
         font-size: 0.85em;
-    }
-
-    .page-description {
-        font-size: 1.6rem;
     }
 
     h1, h2, h3,
@@ -84,12 +76,10 @@
 
     h1 {
         font-size: 2.8rem;
-        letter-spacing: -1px;
     }
 
     h2 {
         font-size: 2.4rem;
-        letter-spacing: 0;
     }
 
     h3 {
@@ -196,14 +186,4 @@
     .archive-template .main-header .page-description {
         display: none;
     }
-
-    .read-next {
-        margin-top: 2rem;
-        margin-bottom: -37px;
-    }
-
-    .read-next .post {
-        width: 100%;
-    }
-
 }

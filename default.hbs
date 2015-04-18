@@ -22,16 +22,32 @@
 </head>
 <body class="{{body_class}}">
 
-    <div class="main-nav">
-        {{navigation}}
-    </div>
-
     <div class="site-wrapper">
+
+        <div class="main-nav">
+            {{navigation}}
+        </div>
 
         {{! Everything else gets inserted here }}
         {{{body}}}
 
         <footer class="site-footer clearfix">
+
+            <section class="social">
+                <a class="icon-twitter" href="https://twitter.com/trishadvisor" target="_blank">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-instagram" href="https://instagram.com/trishadvisor" target="_blank">
+                    <span class="hidden">Instagram</span>
+                </a>
+                <a class="icon-facebook" href="https://facebook.com/trishadvisor" target="_blank">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-feed" href="{{@blog.url}}/rss/" target="_blank">
+                    <span class="hidden">Subscribe</span>
+                </a>
+            </section>
+
             <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
         </footer>
 
@@ -42,6 +58,7 @@
 
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.scrolled.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
