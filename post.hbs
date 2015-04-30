@@ -42,13 +42,14 @@
     {{! Everything inside the #author tags pulls data from the author }}
     {{#author}}
 
-        {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
-        {{/if}}
-
         <section class="author">
+
+            {{#if image}}
+                <figure class="author-image">
+                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                </figure>
+            {{/if}}
+
             <h4><a href="{{url}}">{{name}}</a></h4>
 
             {{#if bio}}

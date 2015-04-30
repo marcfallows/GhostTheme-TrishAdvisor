@@ -70,27 +70,3 @@
     font-weight: 200;
     color: #50585D;
 }
-
-.author-meta {
-    margin: 1.6rem 0;
-}
-/* Location, website, and link */
-.author-profile .author-meta {
-    margin: 2rem 0;
-    font-family: $font-family-paragraph;
-    font-size: 1.7rem;
-}
-.author-meta span {
-    display: inline-block;
-    margin: 0 2rem 1rem 0;
-    word-wrap: break-word;
-}
-.author-meta a {
-    text-decoration: none;
-}
-
-/* Turn off meta for page2+ to make room for extra
-   pagination prev/next links */
-.archive-template .author-profile .author-meta {
-    display: none;
-}

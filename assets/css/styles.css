@@ -321,6 +321,12 @@ table {
 td, th {
   padding: 0; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 @font-face {
   font-family: 'jennasue';
   src: url('../fonts/jennasue.eot');
@@ -782,8 +788,6 @@ margin on the iframe, cause it breaks stuff. */
   /* Keep images centered, and allow images wider than the main
        text column to break out. */
   /* The author credit area after the post */
-  /* list of author links - location / url */
-  /* Create some space to the right for the share links */
   /* Drop the share links in the space to the right.
        Doing it like this means it's easier for the author bio
        to be flexible at smaller screen sizes while the share
@@ -838,20 +842,6 @@ margin on the iframe, cause it breaks stuff. */
       margin: 1rem 0;
       font-size: 1.4rem;
       line-height: 1.75em; }
-  .post-template .author-meta {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: 1.4rem;
-    line-height: 1;
-    font-style: italic;
-    color: #9EABB3; }
-  .post-template .author-meta a {
-    color: #9EABB3; }
-  .post-template .author-meta a:hover {
-    color: #111; }
-  .post-template .post-footer .author {
-    margin-right: 180px; }
   .post-template .post-footer h4 a {
     color: #2e2e2e;
     text-decoration: none; }
@@ -936,28 +926,6 @@ margin on the iframe, cause it breaks stuff. */
   line-height: 1.5em;
   font-weight: 200;
   color: #50585D; }
-
-.author-meta {
-  margin: 1.6rem 0; }
-
-/* Location, website, and link */
-.author-profile .author-meta {
-  margin: 2rem 0;
-  font-family: "Lora", serif;
-  font-size: 1.7rem; }
-
-.author-meta span {
-  display: inline-block;
-  margin: 0 2rem 1rem 0;
-  word-wrap: break-word; }
-
-.author-meta a {
-  text-decoration: none; }
-
-/* Turn off meta for page2+ to make room for extra
-   pagination prev/next links */
-.archive-template .author-profile .author-meta {
-  display: none; }
 
 /* Github */
 .gist table {
