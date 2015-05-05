@@ -799,9 +799,9 @@ margin on the iframe, cause it breaks stuff. */
       height: auto;
       padding: 0.6em 0;
       /* Centers an image by (1) pushing its left edge to the
-               center of its container and (2) shifting the entire image
-               in the opposite direction by half its own width.
-               Works for images that are larger than their containers. */
+                   center of its container and (2) shifting the entire image
+                   in the opposite direction by half its own width.
+                   Works for images that are larger than their containers. */
       position: relative;
       left: 50%;
       -webkit-transform: translateX(-50%);
@@ -809,24 +809,30 @@ margin on the iframe, cause it breaks stuff. */
       -ms-transform: translateX(-50%);
       /* for IE9 */
       transform: translateX(-50%); }
+    .post-template .post .post-content .sign-off {
+      font-family: "jennasue";
+      font-size: 6rem;
+      line-height: 7rem;
+      color: #5b1ab2; }
+      .post-template .post .post-content .sign-off em {
+        color: #2bb24d; }
     .post-template .post .post-footer {
       position: relative;
-      margin: 6rem 0 0 0;
-      padding: 6rem 0 0 0;
-      border-top: #EBF2F6 1px solid; }
+      margin: 3rem -3rem -3rem -3rem;
+      background: #d5b6ff; }
       .post-template .post .post-footer .share {
-        position: absolute;
-        top: 6rem;
-        right: 0;
-        width: 140px; }
+        position: relative;
+        text-align: right;
+        padding: 2rem 3rem; }
         .post-template .post .post-footer .share a {
-          font-size: 1.8rem;
+          font-size: 2.5rem;
           display: inline-block;
-          margin: 1rem 1.6rem 1.6rem 0;
-          color: #BBC7CC;
-          text-decoration: none; }
+          margin: 0 0 0 3rem;
+          color: #5b1ab2;
+          text-decoration: none;
+          vertical-align: middle; }
           .post-template .post .post-footer .share a:hover {
-            color: #50585D; }
+            color: #3f127c; }
   .post-template .author {
     background: #5b1ab2;
     color: #d5b6ff; }
