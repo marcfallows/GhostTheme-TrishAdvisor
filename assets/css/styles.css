@@ -401,8 +401,8 @@ body {
   height: 100%;
   max-height: 100%;
   font-family: "Lora", serif;
-  font-size: 1.9rem;
-  line-height: 2.1em;
+  font-size: 1.6rem;
+  line-height: 1.8em;
   color: #3A4145;
   -webkit-font-feature-settings: 'kern' 1;
   -moz-font-feature-settings: 'kern' 1;
@@ -763,11 +763,12 @@ margin on the iframe, cause it breaks stuff. */
       color: #d5b6ff;
       margin-bottom: 0.5rem; }
   .post .post-excerpt p {
-    margin: 0;
-    font-size: 0.9em;
-    line-height: 1.7em; }
+    margin: 0; }
   .post .post-tags {
-    margin: 2rem 0 0 0; }
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 2rem 2rem 0; }
     .post .post-tags a {
       display: block;
       float: left;
@@ -778,154 +779,139 @@ margin on the iframe, cause it breaks stuff. */
       line-height: 3rem;
       text-decoration: none;
       padding: 0 1rem;
-      margin: 0 1rem 0 0; }
+      margin: 0 0 0 1rem; }
 
 .post-template {
   /* Stop elements, such as img wider than the post content, from
        creating horizontal scroll - slight hack due to imperfections
-       with browser width % calculations and rounding */
-  /* Tweak the .post wrapper style */
-  /* Keep images centered, and allow images wider than the main
-       text column to break out. */
-  /* The author credit area after the post */
-  /* Drop the share links in the space to the right.
-       Doing it like this means it's easier for the author bio
-       to be flexible at smaller screen sizes while the share
-       links remain at a fixed width the whole time */ }
+       with browser width % calculations and rounding */ }
   .post-template .content {
     overflow: hidden; }
-  .post-template .post-header {
-    margin-bottom: 3.4rem; }
-  .post-template .post-meta {
-    margin: 0; }
-  .post-template .post-date {
-    padding: 0;
-    margin: 0;
-    border: none; }
   .post-template .post {
     margin-top: 0;
-    border-bottom: none;
-    padding-bottom: 0; }
-  .post-template .post-content img {
-    display: block;
-    max-width: 100%;
-    min-width: 100%;
-    height: auto;
-    padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the
-           center of its container and (2) shifting the entire image
-           in the opposite direction by half its own width.
-           Works for images that are larger than their containers. */
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    /* for Safari and iOS */
-    -ms-transform: translateX(-50%);
-    /* for IE9 */
-    transform: translateX(-50%); }
-  .post-template .footnotes {
-    font-style: italic;
-    font-size: 1.3rem; }
-    .post-template .footnotes li {
-      margin: 0.6rem 0; }
-    .post-template .footnotes p {
-      margin: 0; }
-  .post-template .post-footer {
-    position: relative;
-    margin: 6rem 0 0 0;
-    padding: 6rem 0 0 0;
-    border-top: #EBF2F6 1px solid; }
-    .post-template .post-footer h4 {
-      font-size: 1.8rem;
-      margin: 0; }
-    .post-template .post-footer p {
-      margin: 1rem 0;
-      font-size: 1.4rem;
-      line-height: 1.75em; }
-  .post-template .post-footer h4 a {
-    color: #2e2e2e;
-    text-decoration: none; }
-  .post-template .post-footer h4 a:hover {
-    text-decoration: underline; }
-  .post-template .post-footer .share {
-    position: absolute;
-    top: 6rem;
-    right: 0;
-    width: 140px; }
-  .post-template .post-footer .share a {
-    font-size: 1.8rem;
-    display: inline-block;
-    margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
-    text-decoration: none; }
-  .post-template .post-footer .share a:hover {
-    color: #50585D; }
+    padding: 3rem;
+    /* Keep images centered, and allow images wider than the main
+           text column to break out. */ }
+    .post-template .post .post-content img {
+      display: block;
+      max-width: 100%;
+      min-width: 100%;
+      height: auto;
+      padding: 0.6em 0;
+      /* Centers an image by (1) pushing its left edge to the
+               center of its container and (2) shifting the entire image
+               in the opposite direction by half its own width.
+               Works for images that are larger than their containers. */
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      /* for Safari and iOS */
+      -ms-transform: translateX(-50%);
+      /* for IE9 */
+      transform: translateX(-50%); }
+    .post-template .post .post-footer {
+      position: relative;
+      margin: 6rem 0 0 0;
+      padding: 6rem 0 0 0;
+      border-top: #EBF2F6 1px solid; }
+      .post-template .post .post-footer .share {
+        position: absolute;
+        top: 6rem;
+        right: 0;
+        width: 140px; }
+        .post-template .post .post-footer .share a {
+          font-size: 1.8rem;
+          display: inline-block;
+          margin: 1rem 1.6rem 1.6rem 0;
+          color: #BBC7CC;
+          text-decoration: none; }
+          .post-template .post .post-footer .share a:hover {
+            color: #50585D; }
+  .post-template .author {
+    background: #5b1ab2;
+    color: #d5b6ff; }
+    .post-template .author .author-content {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem;
+      overflow: hidden; }
+      .post-template .author .author-content .author-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        overflow: hidden;
+        float: left;
+        margin: 0 3rem 0 0; }
+        .post-template .author .author-content .author-image .img {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 100%; }
+      .post-template .author .author-content h4 a {
+        text-decoration: none; }
+      .post-template .author .author-content p, .post-template .author .author-content span {
+        font-family: "geometrialight", sans-serif;
+        font-size: 2.1rem;
+        line-height: 3.2rem; }
+      .post-template .author .author-content a {
+        color: #d5b6ff; }
+      .post-template .author .author-content .author-meta .author-location:before {
+        padding-right: 0.5rem; }
 
 .author-profile {
   padding: 0 15px 5rem 15px;
   border-bottom: #EBF2F6 1px solid;
-  text-align: center; }
-
-/* Add a little circle in the middle of the border-bottom */
-.author-profile:after {
-  display: block;
-  content: "";
-  width: 7px;
-  height: 7px;
-  border: #E7EEF2 1px solid;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  margin-left: -5px;
-  background: #FFF;
-  border-radius: 100%;
-  box-shadow: #FFF 0 0 0 5px; }
-
-.author-image {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  margin-left: -40px;
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-  overflow: hidden;
-  padding: 6px;
-  background: #fff;
-  z-index: 2;
-  box-shadow: #E7EEF2 0 0 0 1px; }
-
-.author-image .img {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 100%; }
-
-.author-profile .author-image {
-  position: relative;
-  left: auto;
-  top: auto;
-  width: 120px;
-  height: 120px;
-  padding: 3px;
-  margin: -100px auto 0 auto;
-  box-shadow: none; }
-
-.author-title {
-  margin: 1.5rem 0 1rem; }
-
-.author-bio {
-  font-size: 1.8rem;
-  line-height: 1.5em;
-  font-weight: 200;
-  color: #50585D; }
+  text-align: center;
+  /* Add a little circle in the middle of the border-bottom */ }
+  .author-profile:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px; }
+  .author-profile .author-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: -100px auto 0 auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 3px;
+    background: #fff;
+    z-index: 2;
+    box-shadow: none; }
+    .author-profile .author-image .img {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      border-radius: 100%; }
+  .author-profile .author-title {
+    margin: 1.5rem 0 1rem; }
+  .author-profile .author-bio {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 200;
+    color: #50585D; }
 
 /* Github */
 .gist table {
@@ -1134,8 +1120,6 @@ margin on the iframe, cause it breaks stuff. */
   p, ul, ol, dl {
     font-size: 0.95em;
     margin: 0 0 2.5rem 0; }
-  .post-excerpt p {
-    font-size: 0.85em; }
   h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.3em 0; }
   h1 {

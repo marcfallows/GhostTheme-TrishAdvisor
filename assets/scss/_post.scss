@@ -1,4 +1,5 @@
 @import "variables";
+@import "bourbon";
 
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
@@ -64,13 +65,12 @@
 
     .post-excerpt p {
         margin: 0;
-        font-size: 0.9em;
-        line-height: 1.7em;
     }
 
     .post-tags {
 
-        margin: 2rem 0 0 0;
+        @include position(absolute, null 0 0 null);
+        padding: 0 2rem 2rem 0;
 
         a {
             display: block;
@@ -82,11 +82,12 @@
             line-height: 3rem;
             text-decoration: none;
             padding: 0 1rem;
-            margin: 0 1rem 0 0;
+            margin: 0 0 0 1rem;
         }
     }
-}
 
+
+}
 
 .post-template {
     /* Stop elements, such as img wider than the post content, from
@@ -96,106 +97,111 @@
         overflow: hidden;
     }
 
-    .post-header {
-        margin-bottom: 3.4rem;
-    }
-
-    .post-meta {
-        margin: 0;
-    }
-
-    .post-date {
-        padding: 0;
-        margin: 0;
-        border: none;
-    }
-
-    /* Tweak the .post wrapper style */
     .post {
+
         margin-top: 0;
-        border-bottom: none;
-        padding-bottom: 0;
-    }
+        padding: 3rem;
 
-    /* Keep images centered, and allow images wider than the main
-       text column to break out. */
-    .post-content img {
-        display: block;
-        max-width: 100%;
-        min-width: 100%;
-        height: auto;
-        padding: 0.6em 0;
-        /* Centers an image by (1) pushing its left edge to the
-           center of its container and (2) shifting the entire image
-           in the opposite direction by half its own width.
-           Works for images that are larger than their containers. */
-        position: relative;
-        left: 50%;
-        -webkit-transform: translateX(-50%); /* for Safari and iOS */
-        -ms-transform: translateX(-50%); /* for IE9 */
-        transform: translateX(-50%);
-    }
-
-    .footnotes {
-        font-style: italic;
-        font-size: 1.3rem;
-
-        li {
-            margin: 0.6rem 0;
+        /* Keep images centered, and allow images wider than the main
+           text column to break out. */
+        .post-content img {
+            display: block;
+            max-width: 100%;
+            min-width: 100%;
+            height: auto;
+            padding: 0.6em 0;
+            /* Centers an image by (1) pushing its left edge to the
+               center of its container and (2) shifting the entire image
+               in the opposite direction by half its own width.
+               Works for images that are larger than their containers. */
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%); /* for Safari and iOS */
+            -ms-transform: translateX(-50%); /* for IE9 */
+            transform: translateX(-50%);
         }
 
-        p {
-            margin: 0;
-        }
-    }
+        .post-footer {
+            position: relative;
+            margin: 6rem 0 0 0;
+            padding: 6rem 0 0 0;
+            border-top: #EBF2F6 1px solid;
 
-    /* The author credit area after the post */
-    .post-footer {
-        position: relative;
-        margin: 6rem 0 0 0;
-        padding: 6rem 0 0 0;
-        border-top: #EBF2F6 1px solid;
-        h4 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
+            .share {
+                position: absolute;
+                top: 6rem;
+                right: 0;
+                width: 140px;
 
-        p {
-            margin: 1rem 0;
-            font-size: 1.4rem;
-            line-height: 1.75em;
+                a {
+                    font-size: 1.8rem;
+                    display: inline-block;
+                    margin: 1rem 1.6rem 1.6rem 0;
+                    color: #BBC7CC;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #50585D;
+                    }
+                }
+            }
         }
     }
 
-    .post-footer h4 a {
-        color: #2e2e2e;
-        text-decoration: none;
-    }
+    .author {
+        background: $palette-primary;
+        color: $palette-primary-alt;
 
-    .post-footer h4 a:hover {
-        text-decoration: underline;
-    }
+        .author-content {
 
-    /* Drop the share links in the space to the right.
-       Doing it like this means it's easier for the author bio
-       to be flexible at smaller screen sizes while the share
-       links remain at a fixed width the whole time */
-    .post-footer .share {
-        position: absolute;
-        top: 6rem;
-        right: 0;
-        width: 140px;
-    }
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem;
+            overflow: hidden;
 
-    .post-footer .share a {
-        font-size: 1.8rem;
-        display: inline-block;
-        margin: 1rem 1.6rem 1.6rem 0;
-        color: #BBC7CC;
-        text-decoration: none;
-    }
+            .author-image {
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+                overflow: hidden;
+                float: left;
+                margin: 0 3rem 0 0;
 
-    .post-footer .share a:hover {
-        color: #50585D;
+                .img {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center center;
+                    border-radius: 100%;
+                }
+            }
+            
+            h4 {
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            p, span {
+                font-family: $font-family-navigation;
+                font-size: 2.1rem;
+                line-height: 3.2rem;
+            }
+
+            a {
+                color: $palette-primary-alt;
+            }
+
+            .author-meta {
+                .author-location {
+                    &:before {
+                        padding-right: 0.5rem;
+                    }
+                }
+            }
+        }
     }
 }
