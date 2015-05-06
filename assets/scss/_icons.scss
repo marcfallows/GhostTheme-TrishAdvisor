@@ -9,7 +9,7 @@
     font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"], [class*=" icon-"] {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -37,6 +37,22 @@
 
 .icon-link:before {
     content: "\ec96";
+}
+
+.icon-arrow-up:before {
+    content: "\edb4";
+}
+
+.icon-arrow-right:before {
+    content: "\edb8";
+}
+
+.icon-arrow-down:before {
+    content: "\edbc";
+}
+
+.icon-arrow-left:before {
+    content: "\edc0";
 }
 
 .icon-facebook:before {
