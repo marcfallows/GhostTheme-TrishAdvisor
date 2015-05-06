@@ -16,8 +16,7 @@
         }
     }
 
-    a.older-posts,
-    a.newer-posts {
+    a.read-next-stories {
         background-color: $palette-primary;
         position: relative;
         display: block;
@@ -27,7 +26,7 @@
         font-size: $font-size-navigation;
         text-transform: uppercase;
         font-family: $font-family-navigation;
-        padding: 2rem 0;
+        padding: 2rem;
         vertical-align: middle;
 
         @include transition(background-color $animate-duration-fast ease-in, color $animate-duration-fast ease-in);
@@ -36,10 +35,14 @@
             background-color: $palette-primary-alt;
             color: $palette-primary;
         }
-    }
 
-    .older-posts {
-        float: right;
+        &.next {
+            float: left;
+        }
+
+        &.prev {
+            float: right;
+        }
     }
 
     .separator {
@@ -51,9 +54,5 @@
         left: 50%;
         z-index: 1;
         background-color: $palette-primary-alt;
-    }
-
-    .newer-posts {
-        float: left;
     }
 }

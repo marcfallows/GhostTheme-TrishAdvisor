@@ -883,6 +883,50 @@ margin on the iframe, cause it breaks stuff. */
         line-height: 3.2rem; }
       .post-template .author .author-content a {
         color: #d5b6ff; }
+  .post-template .read-next {
+    background-color: #d5b6ff;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
+    .post-template .read-next a.read-next-story {
+      background-color: #d5b6ff;
+      border-top: solid 1px #d5b6ff;
+      position: relative;
+      display: block;
+      width: 50%;
+      text-decoration: none;
+      color: #5b1ab2;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      font-family: "geometriamedium", sans-serif;
+      padding: 2rem;
+      vertical-align: middle;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      -webkit-transition: background-color 250ms ease-in, color 250ms ease-in;
+      -moz-transition: background-color 250ms ease-in, color 250ms ease-in;
+      transition: background-color 250ms ease-in, color 250ms ease-in; }
+      .post-template .read-next a.read-next-story:hover {
+        background-color: #5b1ab2;
+        color: #d5b6ff; }
+      .post-template .read-next a.read-next-story.next {
+        float: left; }
+      .post-template .read-next a.read-next-story.prev {
+        float: right; }
+    .post-template .read-next .separator {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      left: 50%;
+      z-index: 1;
+      background-color: #5b1ab2; }
 
 .author-profile {
   padding: 0 15px 5rem 15px;
@@ -960,7 +1004,7 @@ margin on the iframe, cause it breaks stuff. */
     display: none; }
     .archive-template .extra-pagination .pagination {
       display: block; }
-  .pagination a.older-posts, .pagination a.newer-posts {
+  .pagination a.read-next-stories {
     background-color: #5b1ab2;
     position: relative;
     display: block;
@@ -970,16 +1014,18 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.8rem;
     text-transform: uppercase;
     font-family: "geometriamedium", sans-serif;
-    padding: 2rem 0;
+    padding: 2rem;
     vertical-align: middle;
     -webkit-transition: background-color 250ms ease-in, color 250ms ease-in;
     -moz-transition: background-color 250ms ease-in, color 250ms ease-in;
     transition: background-color 250ms ease-in, color 250ms ease-in; }
-    .pagination a.older-posts:hover, .pagination a.newer-posts:hover {
+    .pagination a.read-next-stories:hover {
       background-color: #d5b6ff;
       color: #5b1ab2; }
-  .pagination .older-posts {
-    float: right; }
+    .pagination a.read-next-stories.next {
+      float: left; }
+    .pagination a.read-next-stories.prev {
+      float: right; }
   .pagination .separator {
     position: absolute;
     display: block;
@@ -989,8 +1035,6 @@ margin on the iframe, cause it breaks stuff. */
     left: 50%;
     z-index: 1;
     background-color: #d5b6ff; }
-  .pagination .newer-posts {
-    float: left; }
 
 .site-footer {
   position: relative;

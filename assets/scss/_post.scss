@@ -219,4 +219,56 @@
             }
         }
     }
+
+    .read-next {
+
+        background-color: $palette-primary-alt;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+
+        a.read-next-story {
+            background-color: $palette-primary-alt;
+            border-top: solid 1px $palette-primary-alt;
+            position: relative;
+            display: block;
+            width: 50%;
+            text-decoration: none;
+            color: $palette-primary;
+            font-size: $font-size-navigation;
+            text-transform: uppercase;
+            font-family: $font-family-navigation;
+            padding: 2rem;
+            vertical-align: middle;
+            @include ellipsis();
+
+            @include transition(background-color $animate-duration-fast ease-in, color $animate-duration-fast ease-in);
+
+            &:hover {
+                background-color: $palette-primary;
+                color: $palette-primary-alt;
+            }
+
+            &.next {
+                float: left;
+            }
+
+            &.prev {
+                float: right;
+            }
+        }
+
+        .separator {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            left: 50%;
+            z-index: 1;
+            background-color: $palette-primary;
+        }
+    }
 }
