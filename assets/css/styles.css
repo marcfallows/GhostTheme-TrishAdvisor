@@ -798,7 +798,6 @@ margin on the iframe, cause it breaks stuff. */
   .post-template .content {
     overflow: hidden; }
   .post-template .post {
-    margin-top: 0;
     padding: 3rem;
     /* Keep images centered, and allow images wider than the main
            text column to break out. */ }
