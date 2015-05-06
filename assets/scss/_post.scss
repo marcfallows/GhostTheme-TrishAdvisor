@@ -56,8 +56,8 @@
 
         .post-date {
             font-family: $font-family-header;
-            font-size: 1.5rem;
-            line-height: 0.5rem;
+            font-size: 1.7rem;
+            line-height: 1rem;
             color: $palette-primary-alt;
             margin-bottom: 0.5rem;
         }
@@ -69,12 +69,10 @@
 
     .post-tags {
 
-        @include position(absolute, null 0 0 null);
-        padding: 0 2rem 2rem 0;
+        padding: 2rem 2rem 2rem 0;
 
         a {
-            display: block;
-            float: left;
+            display: inline-block;
             color: $palette-primary-alt;
             background: $palette-primary;
             font-family: $font-family-header;
@@ -86,7 +84,10 @@
         }
     }
 
-
+    footer.post-tags {
+        @include position(absolute, null 0 0 null);
+        text-align: right;
+    }
 }
 
 .post-template {
@@ -104,6 +105,11 @@
         /* Keep images centered, and allow images wider than the main
            text column to break out. */
         .post-content {
+
+            .post-tags {
+                text-align: center;
+            }
+
             img {
 
                 display: block;

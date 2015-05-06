@@ -768,20 +768,16 @@ margin on the iframe, cause it breaks stuff. */
         text-decoration: none; }
     .post .post-header .post-date {
       font-family: "geometrialight", sans-serif;
-      font-size: 1.5rem;
-      line-height: 0.5rem;
+      font-size: 1.7rem;
+      line-height: 1rem;
       color: #d5b6ff;
       margin-bottom: 0.5rem; }
   .post .post-excerpt p {
     margin: 0; }
   .post .post-tags {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 0 2rem 2rem 0; }
+    padding: 2rem 2rem 2rem 0; }
     .post .post-tags a {
-      display: block;
-      float: left;
+      display: inline-block;
       color: #d5b6ff;
       background: #5b1ab2;
       font-family: "geometrialight", sans-serif;
@@ -790,6 +786,11 @@ margin on the iframe, cause it breaks stuff. */
       text-decoration: none;
       padding: 0 1rem;
       margin: 0 0 0 1rem; }
+  .post footer.post-tags {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right; }
 
 .post-template {
   /* Stop elements, such as img wider than the post content, from
@@ -801,6 +802,8 @@ margin on the iframe, cause it breaks stuff. */
     padding: 3rem;
     /* Keep images centered, and allow images wider than the main
            text column to break out. */ }
+    .post-template .post .post-content .post-tags {
+      text-align: center; }
     .post-template .post .post-content img {
       display: block;
       max-width: 100%;
