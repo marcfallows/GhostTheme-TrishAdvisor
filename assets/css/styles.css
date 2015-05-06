@@ -355,7 +355,7 @@ html {
   font-weight: normal;
   font-style: normal; }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -378,6 +378,18 @@ html {
 
 .icon-link:before {
   content: "\ec96"; }
+
+.icon-arrow-up:before {
+  content: "\edb4"; }
+
+.icon-arrow-right:before {
+  content: "\edb8"; }
+
+.icon-arrow-down:before {
+  content: "\edbc"; }
+
+.icon-arrow-left:before {
+  content: "\edc0"; }
 
 .icon-facebook:before {
   content: "\eee9"; }
@@ -679,10 +691,10 @@ table.plain tbody > tr:nth-child(odd) > td, table.plain tbody > tr:nth-child(odd
       .main-nav .nav ul li a {
         display: block;
         text-decoration: none;
-        font-family: "geometrialight", sans-serif;
+        font-family: "geometriamedium", sans-serif;
         text-transform: uppercase;
         line-height: 60px;
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         height: 60px;
         padding: 0 15px;
         margin-left: 1px; }
@@ -707,12 +719,10 @@ margin on the iframe, cause it breaks stuff. */
   display: table;
   width: 100%;
   height: 50vh;
-  margin-bottom: 5rem;
   text-align: center;
   background: #222 no-repeat center center;
   background-size: cover;
-  overflow: hidden;
-  border-bottom: #d5b6ff solid 5px; }
+  overflow: hidden; }
 
 .no-cover.main-header {
   height: 60px;
@@ -815,7 +825,8 @@ margin on the iframe, cause it breaks stuff. */
       line-height: 7rem;
       color: #5b1ab2; }
       .post-template .post .post-content .sign-off em {
-        color: #2bb24d; }
+        color: #2bb24d;
+        font-style: normal; }
     .post-template .post .post-footer {
       position: relative;
       margin: 3rem -3rem -3rem -3rem;
@@ -824,6 +835,13 @@ margin on the iframe, cause it breaks stuff. */
         position: relative;
         text-align: right;
         padding: 2rem 3rem; }
+        .post-template .post .post-footer .share p {
+          font-size: 1.8rem;
+          font-family: "geometriamedium", sans-serif;
+          text-transform: uppercase;
+          display: inline-block;
+          margin: 0 0 0 3rem;
+          color: #5b1ab2; }
         .post-template .post .post-footer .share a {
           font-size: 2.5rem;
           display: inline-block;
@@ -859,14 +877,12 @@ margin on the iframe, cause it breaks stuff. */
           border-radius: 100%; }
       .post-template .author .author-content h4 a {
         text-decoration: none; }
-      .post-template .author .author-content p, .post-template .author .author-content span {
+      .post-template .author .author-content p, .post-template .author .author-content .author-meta {
         font-family: "geometrialight", sans-serif;
         font-size: 2.1rem;
         line-height: 3.2rem; }
       .post-template .author .author-content a {
         color: #d5b6ff; }
-      .post-template .author .author-content .author-meta .author-location:before {
-        padding-right: 0.5rem; }
 
 .author-profile {
   padding: 0 15px 5rem 15px;
@@ -935,84 +951,57 @@ margin on the iframe, cause it breaks stuff. */
   margin-bottom: 1.75em; }
 
 .pagination {
+  background-color: #5b1ab2;
+  text-align: center;
   position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 4rem auto;
-  font-family: "geometrialight", sans-serif;
-  font-size: 1.3rem;
-  color: #9EABB3;
-  text-align: center; }
-
-.pagination a {
-  color: #9EABB3;
-  transition: all 0.2s ease; }
-
-/* Push the previous/next links out to the left/right */
-.older-posts, .newer-posts {
-  position: absolute;
-  display: inline-block;
-  padding: 0 15px;
-  border: #bfc8cd 1px solid;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: border 0.3s ease; }
-
-.older-posts {
-  right: 0; }
-
-.page-number {
-  display: inline-block;
-  padding: 2px 0;
-  min-width: 100px; }
-
-.newer-posts {
-  left: 0; }
-
-.older-posts:hover, .newer-posts:hover {
-  color: #889093;
-  border-color: #98a0a4; }
-
-.extra-pagination {
-  display: none;
-  border-bottom: #EBF2F6 1px solid; }
-
-.extra-pagination:after {
-  display: block;
-  content: "";
-  width: 7px;
-  height: 7px;
-  border: #E7EEF2 1px solid;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  margin-left: -5px;
-  background: #FFF;
-  border-radius: 100%;
-  box-shadow: #FFF 0 0 0 5px; }
-
-.extra-pagination .pagination {
-  width: auto; }
-
-/* On page2+ make all the headers smaller */
-.archive-template .main-header {
-  max-height: 30vh; }
-
-/* On page2+ show extra pagination controls at the top of post list */
-.archive-template .extra-pagination {
-  display: block; }
+  width: 100%;
+  overflow: hidden; }
+  .extra-pagination .pagination {
+    display: none; }
+    .archive-template .extra-pagination .pagination {
+      display: block; }
+  .pagination a.older-posts, .pagination a.newer-posts {
+    background-color: #5b1ab2;
+    position: relative;
+    display: block;
+    width: 50%;
+    text-decoration: none;
+    color: #d5b6ff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: "geometriamedium", sans-serif;
+    padding: 2rem 0;
+    vertical-align: middle;
+    -webkit-transition: background-color 250ms ease-in, color 250ms ease-in;
+    -moz-transition: background-color 250ms ease-in, color 250ms ease-in;
+    transition: background-color 250ms ease-in, color 250ms ease-in; }
+    .pagination a.older-posts:hover, .pagination a.newer-posts:hover {
+      background-color: #d5b6ff;
+      color: #5b1ab2; }
+  .pagination .older-posts {
+    float: right; }
+  .pagination .separator {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    left: 50%;
+    z-index: 1;
+    background-color: #d5b6ff; }
+  .pagination .newer-posts {
+    float: left; }
 
 .site-footer {
   position: relative;
-  margin: 8rem 0 0 0;
+  margin: 0;
   padding: 8rem 0;
   text-align: center;
-  font-family: "geometrialight", sans-serif;
-  font-size: 1.6rem;
+  font-family: "geometriamedium", sans-serif;
+  font-size: 2rem;
   line-height: 1.75em;
   background: #2bb24d;
-  color: #fff;
-  border-top: #7dcc91 solid 5px; }
+  color: #7dcc91; }
   .site-footer .social {
     margin: 0 0 4rem 0; }
     .site-footer .social a {
@@ -1026,8 +1015,13 @@ margin on the iframe, cause it breaks stuff. */
       .site-footer .social a:hover {
         color: #fff; }
   .site-footer .copyright a {
-    color: #fff;
-    text-decoration: none; }
+    color: #7dcc91;
+    text-decoration: none;
+    -webkit-transition: color 250ms ease-in 0s;
+    -moz-transition: color 250ms ease-in 0s;
+    transition: color 250ms ease-in 0s; }
+    .site-footer .copyright a:hover {
+      color: #fff; }
 
 @media only screen and (max-width: 900px) {
   blockquote {

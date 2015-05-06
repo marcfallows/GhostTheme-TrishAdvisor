@@ -6,12 +6,10 @@
     display: table;
     width: 100%;
     height: $cover-height;
-    margin-bottom: 5rem;
     text-align: center;
     background: #222 no-repeat center center;
     background-size: cover;
     overflow: hidden;
-    border-bottom: $palette-primary-alt solid 5px;
 }
 
 .no-cover.main-header {

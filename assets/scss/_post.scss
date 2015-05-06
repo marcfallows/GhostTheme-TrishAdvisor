@@ -131,6 +131,7 @@
 
                 em {
                     color: $palette-secondary;
+                    font-style: normal;
                 }
             }
         }
@@ -144,6 +145,15 @@
                 position: relative;
                 text-align: right;
                 padding: 2rem 3rem;
+
+                p {
+                    font-size: $font-size-navigation;
+                    font-family: $font-family-navigation;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    margin: 0 0 0 3rem;
+                    color: $palette-primary;
+                }
 
                 a {
                     font-size: 2.5rem;
@@ -198,22 +208,14 @@
                 }
             }
 
-            p, span {
-                font-family: $font-family-navigation;
+            p, .author-meta {
+                font-family: $font-family-header;
                 font-size: 2.1rem;
                 line-height: 3.2rem;
             }
 
             a {
                 color: $palette-primary-alt;
-            }
-
-            .author-meta {
-                .author-location {
-                    &:before {
-                        padding-right: 0.5rem;
-                    }
-                }
             }
         }
     }

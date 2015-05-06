@@ -2,15 +2,14 @@
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 0;
     padding: 8rem 0;
     text-align: center;
-    font-family: $font-family-header;
-    font-size: 1.6rem;
+    font-family: $font-family-navigation;
+    font-size: 2rem;
     line-height: 1.75em;
     background: $palette-secondary;
-    color: $palette-light;
-    border-top: $palette-secondary-alt solid 5px;
+    color: $palette-secondary-alt;
 
     .social {
         margin: 0 0 4rem 0;
@@ -30,8 +29,13 @@
 
     .copyright {
         a {
-            color: $palette-light;
+            color: $palette-secondary-alt;
             text-decoration: none;
+            @include transition(color $animate-duration-fast ease-in 0s);
+
+            &:hover {
+                color: $palette-light;
+            }
         }
     }
 }
