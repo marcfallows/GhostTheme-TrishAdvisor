@@ -853,38 +853,6 @@ margin on the iframe, cause it breaks stuff. */
           vertical-align: middle; }
           .post-template .post .post-footer .share a:hover {
             color: #3f127c; }
-  .post-template .author {
-    background: #5b1ab2;
-    color: #d5b6ff; }
-    .post-template .author .author-content {
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 3rem;
-      overflow: hidden; }
-      .post-template .author .author-content .author-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 100%;
-        overflow: hidden;
-        float: left;
-        margin: 0 3rem 0 0; }
-        .post-template .author .author-content .author-image .img {
-          position: relative;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-size: cover;
-          background-position: center center;
-          border-radius: 100%; }
-      .post-template .author .author-content h4 a {
-        text-decoration: none; }
-      .post-template .author .author-content p, .post-template .author .author-content .author-meta {
-        font-family: "geometrialight", sans-serif;
-        font-size: 2.1rem;
-        line-height: 3.2rem; }
-      .post-template .author .author-content a {
-        color: #d5b6ff; }
   .post-template .read-next {
     background-color: #d5b6ff;
     text-align: center;
@@ -931,55 +899,38 @@ margin on the iframe, cause it breaks stuff. */
       background-color: #5b1ab2; }
 
 .author-profile {
-  padding: 0 15px 5rem 15px;
-  border-bottom: #EBF2F6 1px solid;
-  text-align: center;
-  /* Add a little circle in the middle of the border-bottom */ }
-  .author-profile:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #FFF;
-    border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px; }
-  .author-profile .author-image {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-    top: auto;
-    left: auto;
-    margin: -100px auto 0 auto;
-    width: 120px;
-    height: 120px;
-    border-radius: 100%;
-    overflow: hidden;
-    padding: 3px;
-    background: #fff;
-    z-index: 2;
-    box-shadow: none; }
-    .author-profile .author-image .img {
-      position: relative;
+  background: #5b1ab2;
+  color: #d5b6ff; }
+  .author-profile .author-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+    overflow: hidden; }
+    .author-profile .author-content .author-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      overflow: hidden;
+      float: left;
+      margin: 0 3rem 0 0; }
+      .author-profile .author-content .author-image .img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 100%; }
+    .author-profile .author-content h4 a {
+      text-decoration: none; }
+    .author-profile .author-content p, .author-profile .author-content .author-meta > span {
       display: block;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center center;
-      border-radius: 100%; }
-  .author-profile .author-title {
-    margin: 1.5rem 0 1rem; }
-  .author-profile .author-bio {
-    font-size: 1.8rem;
-    line-height: 1.5em;
-    font-weight: 200;
-    color: #50585D; }
+      font-family: "geometrialight", sans-serif;
+      font-size: 2.1rem;
+      line-height: 3.2rem; }
+    .author-profile .author-content a {
+      color: #d5b6ff; }
 
 /* Github */
 .gist table {
