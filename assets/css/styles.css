@@ -697,7 +697,10 @@ table.plain tbody > tr:nth-child(odd) > td, table.plain tbody > tr:nth-child(odd
         font-size: 1.8rem;
         height: 60px;
         padding: 0 15px;
-        margin-left: 1px; }
+        margin-left: 1px;
+        -webkit-transition: background-color 250ms ease-in, color 250ms ease-in;
+        -moz-transition: background-color 250ms ease-in, color 250ms ease-in;
+        transition: background-color 250ms ease-in, color 250ms ease-in; }
       .main-nav .nav ul li a:link, .main-nav .nav ul li a:visited {
         color: #d5b6ff; }
       .main-nav .nav ul li.nav-current a, .main-nav .nav ul li a:hover, .main-nav .nav ul li a:active, .main-nav .nav ul li a:focus {

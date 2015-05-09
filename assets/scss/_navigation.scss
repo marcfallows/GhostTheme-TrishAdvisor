@@ -59,6 +59,8 @@
                     height: $main-nav-height;
                     padding: 0 15px;
                     margin-left: 1px;
+
+                    @include transition(background-color $animate-duration-fast ease-in, color $animate-duration-fast ease-in);
                 }
 
                 a:link,

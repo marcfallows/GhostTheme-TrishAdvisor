@@ -1,9 +1,10 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The big featured header }}
-<header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}"></header>
-
+{{#author}}
+    {{! The big featured header }}
+    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}"></header>
+{{/author}}
 {{> "author-profile"}}
 
 {{! The main content area on the homepage }}
