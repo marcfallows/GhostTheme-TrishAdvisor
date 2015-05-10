@@ -1,6 +1,3 @@
-
-
-
 $palette-primary: #5b1ab2;
 $palette-primary-alt: #d5b6ff;
 $palette-secondary: #2bb24d;
@@ -14,6 +11,11 @@ $main-nav-height: 100px;
 $main-nav-height-stuck: 60px;
 $cover-height: 50vh;
 $main-nav-margin: 20px;
+$main-nav-toggle-size: (
+    width: 40px,
+    height: 35px,
+    thickness: 5px
+);
 
 $main-nav-shadow-dims: 1px 1px 10px;
 $main-nav-shadow: $main-nav-shadow-dims rgba($palette-dark, 0.7);
@@ -30,6 +32,6 @@ $font-family-handwriting: "jennasue";
 $animate-duration-fast: 250ms;
 
 $breakpoints: (
-    mobile: 500px,
-    tablet: 900px
+    mobile: new-breakpoint(max-width 500px),
+    tablet: new-breakpoint(max-width 900px)
 );

@@ -1,9 +1,4 @@
-@import "variables";
-@import "neat";
-
-$breakpoint: new-breakpoint(max-width map_get($breakpoints, mobile));
-
-@include media($breakpoint) {
+@include media(map_get($breakpoints, mobile)) {
     
     hr {
         margin: 1.75em 0;

@@ -1,9 +1,6 @@
-@import "variables";
-
 .main-nav {
 
     position: relative;
-    overflow: hidden;
     z-index: 10;
     height: $main-nav-height;
 
@@ -22,6 +19,7 @@
         }
 
         ul {
+            clear: both;
             float: right;
             padding-right: 15px;
 
@@ -58,6 +56,10 @@
                 }
             }
         }
+
+        .nav-toggle {
+            display: none;
+        }
     }
 
     .is-sticky & {
@@ -85,6 +87,131 @@
                     a:active,
                     a:focus {
                         color: $palette-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media(map_get($breakpoints, tablet)) {
+    .main-nav {
+
+        .nav {
+
+            ul {
+                @include position(fixed, 0 0 null 0);
+                height: 100vh;
+                left: 100vw;
+
+                margin-left: 4rem;
+                float: none;
+                background: $palette-primary;
+                padding: $main-nav-height-stuck 2rem;
+
+                @include transition(left $animate-duration-fast ease-in);
+
+                li {
+                    float: none;
+
+                    a {
+                        text-shadow: none;
+                        margin: 0;
+                    }
+
+                    a:link,
+                    a:visited {
+                        color: $palette-primary-alt;
+                    }
+
+                    &.nav-current a,
+                    a:hover,
+                    a:active,
+                    a:focus {
+                        color: $palette-light;
+                        background: none;
+                    }
+                }
+            }
+
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-top: ( $main-nav-height - map_get($main-nav-toggle-size, height) ) / 2;
+                width: map_get($main-nav-toggle-size, width);
+                height: map_get($main-nav-toggle-size, height);
+                margin-right: 30px;
+                margin-left: auto;
+                cursor: pointer;
+                user-select: none;
+                z-index: 1;
+
+                @include transition(margin-top $animate-duration-fast ease-in);
+
+                .nav-toggle-icon {
+                    top: map_get($main-nav-toggle-size, height)/2 - map_get($main-nav-toggle-size, thickness)/2;
+
+                    &, &:before, &:after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        transition: $animate-duration-fast;
+                        background: $palette-light;
+                        width: map_get($main-nav-toggle-size, width);
+                        height: map_get($main-nav-toggle-size, thickness);
+                        box-shadow: $main-nav-shadow;
+                    }
+
+                    $stick-position: floor(map_get($main-nav-toggle-size, height)/2 - map_get($main-nav-toggle-size, thickness));
+                    &:before {
+                        top: $stick-position;
+                    }
+                    &:after {
+                        top: -$stick-position;
+                    }
+                }
+            }
+        }
+
+        .is-sticky & {
+            .nav-toggle {
+                margin-top: ( $main-nav-height-stuck - map_get($main-nav-toggle-size, height) ) / 2;
+
+                .nav-toggle-icon {
+
+                    &, &:before, &:after {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        .nav-opened & {
+            .nav {
+                background: none;
+
+                ul {
+                    left: 0;
+                }
+
+                .nav-toggle {
+                    margin-top: ( $main-nav-height-stuck - map_get($main-nav-toggle-size, height) ) / 2;
+
+                    .nav-toggle-icon {
+
+                        background: transparent;
+
+                        &, &:before, &:after {
+                            box-shadow: none;
+                        }
+
+                        &:before, &:after {
+                            top: 0;
+                        }
+                        &:before { transform: rotate(-45deg); }
+                        &:after { transform: rotate(45deg); }
                     }
                 }
             }

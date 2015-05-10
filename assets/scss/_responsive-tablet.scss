@@ -1,9 +1,4 @@
-@import "variables";
-@import "neat";
-
-$breakpoint: new-breakpoint(max-width map_get($breakpoints, tablet));
-
-@include media($breakpoint) {
+@include media(map_get($breakpoints, tablet)) {
 
     hr {
         margin: 2.4em 0;

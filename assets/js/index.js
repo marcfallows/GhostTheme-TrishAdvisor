@@ -9,6 +9,11 @@
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
+        $(".nav-toggle").on("click", function(e){
+            e.preventDefault();
+            $("body").toggleClass("nav-opened nav-closed");
+        });
+
         $(".main-nav").sticky();
     });
 })(jQuery);

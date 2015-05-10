@@ -1,4 +1,7 @@
 <div class="nav">
+    <a class="nav-toggle">
+        <div class="nav-toggle-icon"></div>
+    </a>
     <ul>
         {{#foreach navigation}}
             <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
