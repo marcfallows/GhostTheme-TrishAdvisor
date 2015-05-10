@@ -7,9 +7,11 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-top: 4rem;
 
     .extra-pagination & {
         display: none;
+        margin-top: 0;
 
         .archive-template & {
             display: block;

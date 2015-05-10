@@ -1,49 +1,16 @@
-@media only screen and (max-width: 900px) {
+@import "variables";
+@import "neat";
 
-    blockquote {
-        margin-left: 0;
-    }
+$breakpoint: new-breakpoint(max-width map_get($breakpoints, tablet));
 
-    .main-header {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        height: auto;
-        min-height: 240px;
-        height: 60vh;
-        padding: 15% 0;
-    }
-
-    .home-template .main-header:after { display: none; }
-
-    .archive-template .main-header {
-        min-height: 180px;
-        padding: 10% 0;
-    }
-
-    .blog-logo img {
-        padding: 4px 0;
-    }
-
-    .post {
-        font-size: 0.95em
-    }
-
-    body:not(.post-template) .post-title {
-        font-size: 3.2rem;
-    }
+@include media($breakpoint) {
 
     hr {
         margin: 2.4em 0;
     }
 
-    ol, ul {
-        padding-left: 2em;
-    }
-
     h1 {
         font-size: 4.5rem;
-        text-indent: -2px;
     }
 
     h2 {
@@ -66,37 +33,13 @@
         font-size: 1.8rem;
     }
 
-    .author-profile {
-        padding-bottom: 4rem;
+    .posts {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
-    .author-profile .author-bio {
-        font-size: 1.6rem;
-    }
-
-    .author-meta span {
-        display: block;
-        margin: 1.5rem 0;
-    }
-    .author-profile .author-meta span {
-        font-size: 1.6rem;
-    }
-
-    .post-head.main-header {
-        height:45vh;
-    }
-
-    .tag-head.main-header,
-    .author-head.main-header {
-        height: 30vh;
-    }
-
-    .no-cover.post-head.main-header {
-        height: 55px;
-        padding: 0;
-    }
-
-    .no-cover.author-head.main-header {
-        padding: 0;
+    .post-template .post-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }

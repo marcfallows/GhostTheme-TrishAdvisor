@@ -4,27 +4,29 @@
 </div>
 
 {{! This is the post loop - each post will be output using this markup }}
-{{#foreach posts}}
-<article class="{{post_class}}">
+<div class="posts">
+    {{#foreach posts}}
+    <article class="{{post_class}}">
 
-    {{#if image}}
-        <figure class="post-cover">
-            <a class="img" href="{{url}}" style="background-image: url({{image}})"></a>
-        </figure>
-    {{/if}}
+        {{#if image}}
+            <figure class="post-cover">
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"></a>
+            </figure>
+        {{/if}}
 
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-tags">
-        {{tags separator=""}}
-    </footer>
-</article>
-{{/foreach}}
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+        </section>
+        <footer class="post-tags">
+            {{tags separator=""}}
+        </footer>
+    </article>
+    {{/foreach}}
+</div>
 
 {{! Previous/next page links - displayed on every page }}
 {{pagination}}

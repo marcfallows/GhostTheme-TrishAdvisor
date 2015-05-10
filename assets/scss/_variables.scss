@@ -19,3 +19,8 @@ $font-family-paragraph: "Lora", serif;
 $font-family-handwriting: "jennasue";
 
 $animate-duration-fast: 250ms;
+
+$breakpoints: (
+    mobile: 500px,
+    tablet: 900px
+);

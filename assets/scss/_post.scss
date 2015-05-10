@@ -1,21 +1,23 @@
 @import "variables";
 @import "bourbon";
+@import "neat";
+
+
+.posts {
+    @include outer-container;
+
+    .post {
+        @include span-columns(12);
+    }
+}
 
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    max-width: 800px;
-    width: 100%;
     overflow: hidden;
-    margin: 4rem auto;
+    margin: 4rem auto 0 auto;
     background: $palette-light;
     padding: 2rem;
-
-    word-wrap: break-word;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
 
     box-shadow: 2px 2px 7px 0px rgba(50, 50, 50, 0.5);
 
@@ -81,6 +83,15 @@
             text-decoration: none;
             padding: 0 1rem;
             margin: 0 0 0 1rem;
+
+            @include transition(background-color $animate-duration-fast ease-in, color $animate-duration-fast ease-in);
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+            color: $palette-primary;
+            background: $palette-primary-alt;
         }
     }
 
@@ -98,82 +109,91 @@
         overflow: hidden;
     }
 
-    .post {
+    .post-container {
+        @include outer-container;
 
-        padding: 3rem;
+        .post {
 
-        /* Keep images centered, and allow images wider than the main
-           text column to break out. */
-        .post-content {
+            @include span-columns(12);
+            padding: 3rem;
 
-            .post-tags {
-                text-align: center;
-            }
+            /* Keep images centered, and allow images wider than the main
+               text column to break out. */
+            .post-content {
 
-            img {
-
-                display: block;
-                max-width: 100%;
-                min-width: 100%;
-                height: auto;
-                padding: 0.6em 0;
-                /* Centers an image by (1) pushing its left edge to the
-                   center of its container and (2) shifting the entire image
-                   in the opposite direction by half its own width.
-                   Works for images that are larger than their containers. */
-                position: relative;
-                left: 50%;
-                -webkit-transform: translateX(-50%); /* for Safari and iOS */
-                -ms-transform: translateX(-50%); /* for IE9 */
-                transform: translateX(-50%);
-            }
-            
-            .sign-off {
-                font-family: $font-family-handwriting;
-                font-size: 6rem;
-                line-height: 7rem;
-                color: $palette-primary;
-
-                em {
-                    color: $palette-secondary;
-                    font-style: normal;
-                }
-            }
-        }
-
-        .post-footer {
-            position: relative;
-            margin: 3rem -3rem -3rem -3rem;
-            background: $palette-primary-alt;
-
-            .share {
-                position: relative;
-                text-align: right;
-                padding: 2rem 3rem;
-
-                p {
-                    font-size: $font-size-navigation;
-                    font-family: $font-family-navigation;
-                    text-transform: uppercase;
-                    display: inline-block;
-                    margin: 0 0 0 3rem;
-                    color: $palette-primary;
+                .post-tags {
+                    text-align: center;
                 }
 
-                a {
-                    font-size: 2.5rem;
-                    display: inline-block;
-                    margin: 0 0 0 3rem;
-                    color: $palette-primary;
-                    text-decoration: none;
-                    vertical-align: middle;
+                img {
 
-                    &:hover {
-                        color: shade($palette-primary, 30%);
+                    display: block;
+                    max-width: 100%;
+                    min-width: 100%;
+                    height: auto;
+                    padding: 0.6em 0;
+                    /* Centers an image by (1) pushing its left edge to the
+                       center of its container and (2) shifting the entire image
+                       in the opposite direction by half its own width.
+                       Works for images that are larger than their containers. */
+                    position: relative;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+                    -ms-transform: translateX(-50%); /* for IE9 */
+                    transform: translateX(-50%);
+                }
+
+                .sign-off {
+                    font-family: $font-family-handwriting;
+                    font-size: 6rem;
+                    line-height: 7rem;
+                    color: $palette-primary;
+
+                    em {
+                        color: $palette-secondary;
+                        font-style: normal;
+                    }
+                }
+            }
+
+            .post-footer {
+                position: relative;
+                margin: 3rem -3rem -3rem -3rem;
+                background: $palette-primary-alt;
+
+                .share {
+                    position: relative;
+                    text-align: right;
+                    padding: 2rem 3rem;
+
+                    p {
+                        font-size: $font-size-navigation;
+                        font-family: $font-family-navigation;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        margin: 0 0 0 3rem;
+                        color: $palette-primary;
+                    }
+
+                    a {
+                        font-size: 2.5rem;
+                        display: inline-block;
+                        margin: 0 0 0 3rem;
+                        color: $palette-primary;
+                        text-decoration: none;
+                        vertical-align: middle;
+
+                        &:hover {
+                            color: shade($palette-primary, 30%);
+                        }
                     }
                 }
             }
         }
+    }
+
+    .author-profile {
+        margin-top: 4rem;
     }
 
     .read-next {

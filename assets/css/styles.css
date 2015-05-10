@@ -731,20 +731,35 @@ margin on the iframe, cause it breaks stuff. */
   height: 60px;
   background: transparent; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.posts {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .posts::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .posts .post {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .posts .post:last-child {
+      margin-right: 0; }
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
   position: relative;
-  max-width: 800px;
-  width: 100%;
   overflow: hidden;
-  margin: 4rem auto;
+  margin: 4rem auto 0 auto;
   background: #fff;
   padding: 2rem;
-  word-wrap: break-word;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
   box-shadow: 2px 2px 7px 0px rgba(50, 50, 50, 0.5); }
   .post .post-cover {
     -webkit-box-sizing: border-box;
@@ -788,7 +803,13 @@ margin on the iframe, cause it breaks stuff. */
       line-height: 3rem;
       text-decoration: none;
       padding: 0 1rem;
-      margin: 0 0 0 1rem; }
+      margin: 0 0 0 1rem;
+      -webkit-transition: background-color 250ms ease-in, color 250ms ease-in;
+      -moz-transition: background-color 250ms ease-in, color 250ms ease-in;
+      transition: background-color 250ms ease-in, color 250ms ease-in; }
+    .post .post-tags a:hover, .post .post-tags a:active, .post .post-tags a:focus {
+      color: #5b1ab2;
+      background: #d5b6ff; }
   .post footer.post-tags {
     position: absolute;
     right: 0;
@@ -801,61 +822,77 @@ margin on the iframe, cause it breaks stuff. */
        with browser width % calculations and rounding */ }
   .post-template .content {
     overflow: hidden; }
-  .post-template .post {
-    padding: 3rem;
-    /* Keep images centered, and allow images wider than the main
-           text column to break out. */ }
-    .post-template .post .post-content .post-tags {
-      text-align: center; }
-    .post-template .post .post-content img {
+  .post-template .post-container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .post-template .post-container::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .post-template .post-container .post {
+      float: left;
       display: block;
-      max-width: 100%;
-      min-width: 100%;
-      height: auto;
-      padding: 0.6em 0;
-      /* Centers an image by (1) pushing its left edge to the
-                   center of its container and (2) shifting the entire image
-                   in the opposite direction by half its own width.
-                   Works for images that are larger than their containers. */
-      position: relative;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      /* for Safari and iOS */
-      -ms-transform: translateX(-50%);
-      /* for IE9 */
-      transform: translateX(-50%); }
-    .post-template .post .post-content .sign-off {
-      font-family: "jennasue";
-      font-size: 6rem;
-      line-height: 7rem;
-      color: #5b1ab2; }
-      .post-template .post .post-content .sign-off em {
-        color: #2bb24d;
-        font-style: normal; }
-    .post-template .post .post-footer {
-      position: relative;
-      margin: 3rem -3rem -3rem -3rem;
-      background: #d5b6ff; }
-      .post-template .post .post-footer .share {
+      margin-right: 2.35765%;
+      width: 100%;
+      padding: 3rem;
+      /* Keep images centered, and allow images wider than the main
+               text column to break out. */ }
+      .post-template .post-container .post:last-child {
+        margin-right: 0; }
+      .post-template .post-container .post .post-content .post-tags {
+        text-align: center; }
+      .post-template .post-container .post .post-content img {
+        display: block;
+        max-width: 100%;
+        min-width: 100%;
+        height: auto;
+        padding: 0.6em 0;
+        /* Centers an image by (1) pushing its left edge to the
+                       center of its container and (2) shifting the entire image
+                       in the opposite direction by half its own width.
+                       Works for images that are larger than their containers. */
         position: relative;
-        text-align: right;
-        padding: 2rem 3rem; }
-        .post-template .post .post-footer .share p {
-          font-size: 1.8rem;
-          font-family: "geometriamedium", sans-serif;
-          text-transform: uppercase;
-          display: inline-block;
-          margin: 0 0 0 3rem;
-          color: #5b1ab2; }
-        .post-template .post .post-footer .share a {
-          font-size: 2.5rem;
-          display: inline-block;
-          margin: 0 0 0 3rem;
-          color: #5b1ab2;
-          text-decoration: none;
-          vertical-align: middle; }
-          .post-template .post .post-footer .share a:hover {
-            color: #3f127c; }
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        /* for Safari and iOS */
+        -ms-transform: translateX(-50%);
+        /* for IE9 */
+        transform: translateX(-50%); }
+      .post-template .post-container .post .post-content .sign-off {
+        font-family: "jennasue";
+        font-size: 6rem;
+        line-height: 7rem;
+        color: #5b1ab2; }
+        .post-template .post-container .post .post-content .sign-off em {
+          color: #2bb24d;
+          font-style: normal; }
+      .post-template .post-container .post .post-footer {
+        position: relative;
+        margin: 3rem -3rem -3rem -3rem;
+        background: #d5b6ff; }
+        .post-template .post-container .post .post-footer .share {
+          position: relative;
+          text-align: right;
+          padding: 2rem 3rem; }
+          .post-template .post-container .post .post-footer .share p {
+            font-size: 1.8rem;
+            font-family: "geometriamedium", sans-serif;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 0 0 0 3rem;
+            color: #5b1ab2; }
+          .post-template .post-container .post .post-footer .share a {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin: 0 0 0 3rem;
+            color: #5b1ab2;
+            text-decoration: none;
+            vertical-align: middle; }
+            .post-template .post-container .post .post-footer .share a:hover {
+              color: #3f127c; }
+  .post-template .author-profile {
+    margin-top: 4rem; }
   .post-template .read-next {
     background-color: #d5b6ff;
     text-align: center;
@@ -901,15 +938,25 @@ margin on the iframe, cause it breaks stuff. */
       z-index: 1;
       background-color: #5b1ab2; }
 
+.page.post {
+  margin-bottom: 4rem; }
+  .page.post .post-header {
+    margin-bottom: 2rem; }
+
 .author-profile {
   background: #5b1ab2;
   color: #d5b6ff; }
   .author-profile .author-content {
-    max-width: 800px;
-    width: 100%;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
     margin: 0 auto;
     padding: 3rem;
     overflow: hidden; }
+    .author-profile .author-content::after {
+      clear: both;
+      content: "";
+      display: table; }
     .author-profile .author-content .author-image {
       width: 200px;
       height: 200px;
@@ -955,9 +1002,11 @@ margin on the iframe, cause it breaks stuff. */
   text-align: center;
   position: relative;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 4rem; }
   .extra-pagination .pagination {
-    display: none; }
+    display: none;
+    margin-top: 0; }
     .archive-template .extra-pagination .pagination {
       display: block; }
   .pagination a.read-next-stories {
@@ -1023,35 +1072,17 @@ margin on the iframe, cause it breaks stuff. */
     .site-footer .copyright a:hover {
       color: #fff; }
 
-@media only screen and (max-width: 900px) {
-  blockquote {
-    margin-left: 0; }
-  .main-header {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: auto;
-    min-height: 240px;
-    height: 60vh;
-    padding: 15% 0; }
-  .home-template .main-header:after {
-    display: none; }
-  .archive-template .main-header {
-    min-height: 180px;
-    padding: 10% 0; }
-  .blog-logo img {
-    padding: 4px 0; }
-  .post {
-    font-size: 0.95em; }
-  body:not(.post-template) .post-title {
-    font-size: 3.2rem; }
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@media screen and (max-width: 900px)  {
   hr {
     margin: 2.4em 0; }
-  ol, ul {
-    padding-left: 2em; }
   h1 {
-    font-size: 4.5rem;
-    text-indent: -2px; }
+    font-size: 4.5rem; }
   h2 {
     font-size: 3.6rem; }
   h3 {
@@ -1062,66 +1093,22 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 2.2rem; }
   h6 {
     font-size: 1.8rem; }
-  .author-profile {
-    padding-bottom: 4rem; }
-  .author-profile .author-bio {
-    font-size: 1.6rem; }
-  .author-meta span {
-    display: block;
-    margin: 1.5rem 0; }
-  .author-profile .author-meta span {
-    font-size: 1.6rem; }
-  .post-head.main-header {
-    height: 45vh; }
-  .tag-head.main-header, .author-head.main-header {
-    height: 30vh; }
-  .no-cover.post-head.main-header {
-    height: 55px;
-    padding: 0; }
-  .no-cover.author-head.main-header {
-    padding: 0; } }
+  .posts {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  .post-template .post-container {
+    padding-left: 2rem;
+    padding-right: 2rem; } }
 
-@media only screen and (max-width: 500px) {
-  .main-header {
-    margin-bottom: 15px;
-    height: 40vh; }
-  .no-cover.main-header {
-    height: 30vh; }
-  .archive-template .main-header {
-    max-height: 20vh;
-    min-height: 160px;
-    padding: 10% 0; }
-  .main-nav {
-    padding: 5px;
-    margin-bottom: 2rem; }
-  .blog-logo {
-    padding: 5px; }
-  .blog-logo img {
-    height: 30px; }
-  .inner, .pagination {
-    width: auto;
-    margin: 2rem auto; }
-  .post {
-    width: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 16px;
-    margin-right: 16px;
-    padding-bottom: 2rem;
-    line-height: 1.65em; }
-  .post-date {
-    display: none; }
-  .post-template .post-header {
-    margin-bottom: 2rem; }
-  .post-template .post-date {
-    display: inline-block; }
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@media screen and (max-width: 500px)  {
   hr {
     margin: 1.75em 0; }
-  p, ul, ol, dl {
-    font-size: 0.95em;
-    margin: 0 0 2.5rem 0; }
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 0.3em 0; }
   h1 {
     font-size: 2.8rem; }
   h2 {
@@ -1133,55 +1120,4 @@ margin on the iframe, cause it breaks stuff. */
   h5 {
     font-size: 1.8rem; }
   h6 {
-    font-size: 1.8rem; }
-  body:not(.post-template) .post-title {
-    font-size: 2.5rem; }
-  .post-template .site-footer {
-    margin-top: 0; }
-  .post-content img {
-    padding: 0;
-    width: calc(100% + 32px);
-    /* expand with to image + margins */
-    min-width: 0;
-    max-width: 112%;
-    /* fallback when calc doesn't work */ }
-  .post-meta {
-    font-size: 1.3rem;
-    margin-top: 1rem; }
-  .post-footer {
-    padding: 5rem 0 3rem 0;
-    text-align: center; }
-  .post-footer .author {
-    margin: 0 0 2rem 0;
-    padding: 0 0 1.6rem 0;
-    border-bottom: #EBF2F6 1px dashed; }
-  .post-footer .share {
-    position: static;
-    width: auto; }
-  .post-footer .share a {
-    margin: 1.4rem 0.8rem 0 0.8rem; }
-  .author-meta li {
-    float: none;
-    margin: 0;
-    line-height: 1.75em; }
-  .author-meta li:before {
-    display: none; }
-  .older-posts, .newer-posts {
-    position: static;
-    margin: 10px 0; }
-  .page-number {
-    display: block; }
-  .site-footer {
-    margin-top: 3rem; }
-  .author-profile {
-    padding-bottom: 2rem; }
-  .post-head.main-header {
-    height: 30vh; }
-  .tag-head.main-header, .author-head.main-header {
-    height: 20vh; }
-  .author-profile .author-image {
-    margin-top: -70px; }
-  .author-profile .author-meta span {
-    font-size: 1.4rem; }
-  .archive-template .main-header .page-description {
-    display: none; } }
+    font-size: 1.8rem; } }

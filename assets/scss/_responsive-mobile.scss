@@ -1,73 +1,12 @@
-@media only screen and (max-width: 500px) {
+@import "variables";
+@import "neat";
 
-    .main-header {
-        margin-bottom: 15px;
-        height: 40vh;
-    }
+$breakpoint: new-breakpoint(max-width map_get($breakpoints, mobile));
 
-    .no-cover.main-header {
-        height: 30vh;
-    }
-
-    .archive-template .main-header {
-        max-height: 20vh;
-        min-height: 160px;
-        padding: 10% 0;
-    }
-
-    .main-nav {
-        padding: 5px;
-        margin-bottom: 2rem;
-    }
-
-    .blog-logo {
-        padding: 5px;
-    }
-
-    .blog-logo img {
-        height: 30px;
-    }
-
-    .inner,
-    .pagination {
-        width: auto;
-        margin: 2rem auto;
-    }
-
-    .post {
-        width: auto;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        margin-left: 16px;
-        margin-right: 16px;
-        padding-bottom: 2rem;
-        line-height: 1.65em;
-    }
-
-    .post-date {
-        display: none;
-    }
-
-    .post-template .post-header {
-        margin-bottom: 2rem;
-    }
-
-    .post-template .post-date {
-        display: inline-block;
-    }
-
+@include media($breakpoint) {
+    
     hr {
         margin: 1.75em 0;
-    }
-
-    p, ul, ol, dl {
-        font-size: 0.95em;
-        margin: 0 0 2.5rem 0;
-    }
-
-    h1, h2, h3,
-    h4, h5, h6 {
-        margin: 0 0 0.3em 0;
     }
 
     h1 {
@@ -92,94 +31,5 @@
 
     h6 {
         font-size: 1.8rem;
-    }
-
-    body:not(.post-template) .post-title {
-        font-size: 2.5rem;
-    }
-
-    .post-template .site-footer {
-        margin-top: 0;
-    }
-
-    .post-content img {
-        padding: 0;
-        width: calc(100% + 32px); /* expand with to image + margins */
-        min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
-    }
-
-    .post-meta {
-        font-size: 1.3rem;
-        margin-top: 1rem;
-    }
-
-    .post-footer {
-        padding: 5rem 0 3rem 0;
-        text-align: center;
-    }
-
-    .post-footer .author {
-        margin: 0 0 2rem 0;
-        padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
-    }
-
-    .post-footer .share {
-        position: static;
-        width: auto;
-    }
-
-    .post-footer .share a {
-        margin: 1.4rem 0.8rem 0 0.8rem;
-    }
-
-    .author-meta li {
-        float: none;
-        margin: 0;
-        line-height: 1.75em;
-    }
-
-    .author-meta li:before {
-        display: none;
-    }
-
-    .older-posts,
-    .newer-posts {
-        position: static;
-        margin: 10px 0;
-    }
-
-    .page-number {
-        display: block;
-    }
-
-    .site-footer {
-        margin-top: 3rem;
-    }
-
-    .author-profile {
-        padding-bottom: 2rem;
-    }
-
-    .post-head.main-header {
-        height: 30vh;
-    }
-
-    .tag-head.main-header,
-    .author-head.main-header {
-        height: 20vh;
-    }
-
-    .author-profile .author-image {
-        margin-top: -70px;
-    }
-
-    .author-profile .author-meta span {
-        font-size: 1.4rem;
-    }
-
-    .archive-template .main-header .page-description {
-        display: none;
     }
 }
