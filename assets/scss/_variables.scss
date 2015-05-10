@@ -1,6 +1,5 @@
 
-$main-nav-height: 60px;
-$cover-height: 50vh;
+
 
 $palette-primary: #5b1ab2;
 $palette-primary-alt: #d5b6ff;
@@ -9,6 +8,16 @@ $palette-secondary-alt: #7dcc91;
 $palette-neutral: #fff2e0;
 $palette-text-color: #3A4145;
 $palette-light: #fff;
+$palette-dark: #000;
+
+$main-nav-height: 100px;
+$main-nav-height-stuck: 60px;
+$cover-height: 50vh;
+$main-nav-margin: 20px;
+
+$main-nav-shadow-dims: 1px 1px 10px;
+$main-nav-shadow: $main-nav-shadow-dims rgba($palette-dark, 0.7);
+$main-nav-shadow-light: $main-nav-shadow-dims rgba($palette-light, 0.7);
 
 $font-family-header: "geometrialight", sans-serif;
 

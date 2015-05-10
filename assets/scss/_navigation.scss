@@ -2,40 +2,18 @@
 
 .main-nav {
 
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
+    position: relative;
     overflow: hidden;
+    z-index: 10;
+    height: $main-nav-height;
+
     @include transform(translateZ(0));
 
-    background: $palette-primary;
-    opacity: 0.7;
-    z-index: 11;
-    @include transition(opacity $animate-duration-fast ease-in 0s);
-
-    .scrolled &, &:hover {
-        opacity: 1;
-    }
-
-    .blog-logo {
-        display: block;
-        float: left;
-        background: none !important; /* Makes sure there is never a background */
-        border: none !important; /* Makes sure there is never a border */
-
-        img {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            display: block;
-            height: 38px;
-            padding: 1px 0 5px 0;
-            width: auto;
-        }
-    }
-
     .nav {
+
+        height: $main-nav-height;
+        background: rgba($palette-primary, 0);
+        @include transition(background-color $animate-duration-fast ease-in 0s, height $animate-duration-fast ease-in 0s);
 
         ul, li {
             list-style: none;
@@ -45,6 +23,7 @@
 
         ul {
             float: right;
+            padding-right: 15px;
 
             li {
                 float: left;
@@ -54,26 +33,59 @@
                     text-decoration: none;
                     font-family: $font-family-navigation;
                     text-transform: uppercase;
-                    line-height: $main-nav-height;
+                    margin-top: $main-nav-margin;
+                    margin-bottom: $main-nav-margin;
+                    line-height: $main-nav-height - 2*$main-nav-margin;
                     font-size: $font-size-navigation;
-                    height: $main-nav-height;
                     padding: 0 15px;
-                    margin-left: 1px;
+                    margin-left: 15px;
+                    text-shadow: $main-nav-shadow;
 
-                    @include transition(background-color $animate-duration-fast ease-in, color $animate-duration-fast ease-in);
+                    @include transition(all $animate-duration-fast ease-in);
                 }
 
                 a:link,
                 a:visited {
-                    color: $palette-primary-alt;
+                    color: $palette-light;
                 }
 
                 &.nav-current a,
                 a:hover,
                 a:active,
                 a:focus {
-                    color: $palette-primary;
-                    background: $palette-primary-alt;
+                    background: $palette-primary;
+                    color: $palette-primary-alt;
+                }
+            }
+        }
+    }
+
+    .is-sticky & {
+
+        .nav {
+            height: $main-nav-height-stuck;
+            background: rgba($palette-primary, 1);
+
+            ul {
+                li {
+                    a {
+                        text-shadow: none;
+                        line-height: $main-nav-height-stuck;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+
+                    a:link,
+                    a:visited {
+                        color: $palette-primary-alt;
+                    }
+
+                    &.nav-current a,
+                    a:hover,
+                    a:active,
+                    a:focus {
+                        color: $palette-light;
+                    }
                 }
             }
         }

@@ -9,6 +9,6 @@
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
-        $(window).scrolled();
+        $(".main-nav").sticky();
     });
 })(jQuery);

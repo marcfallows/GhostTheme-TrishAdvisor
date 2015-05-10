@@ -6,13 +6,29 @@
     display: table;
     width: 100%;
     height: $cover-height;
+    margin-top: -$main-nav-height;
     text-align: center;
     background: #222 no-repeat center center;
     background-size: cover;
     overflow: hidden;
+
+    &.no-cover {
+        height: $main-nav-height;
+        background: transparent;
+    }
+
+    &::before {
+        content: 'TrishAdvisor';
+        display: inline-block;
+        width: 100%;
+        line-height: $cover-height;
+        text-align: center;
+        font-size: 20vw;
+        opacity: 0.4;
+        font-family: $font-family-handwriting;
+        color: $palette-light;
+
+        text-shadow: $main-nav-shadow;
+    }
 }
 
-.no-cover.main-header {
-    height: $main-nav-height;
-    background: transparent;
-}
