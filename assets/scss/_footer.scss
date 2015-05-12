@@ -10,13 +10,15 @@
     color: $palette-secondary-alt;
 
     .social {
-        margin: 0 0 4rem 0;
 
         a {
+            display: inline-block;
             color: $palette-secondary-alt;
             font-size: 6rem;
             text-decoration: none;
-            padding: 0 2rem;
+            padding: 0 3rem;
+            margin: 0 0 3rem 0;
+
             @include transition(color $animate-duration-fast ease-in 0s);
 
             &:hover {
@@ -33,6 +35,28 @@
 
             &:hover {
                 color: $palette-light;
+            }
+        }
+    }
+}
+
+@include media(map_get($breakpoints, medium)) {
+    .site-footer {
+        .social {
+
+            a {
+                padding: 0 2rem;
+                font-size: 5rem;
+            }
+        }
+    }
+}
+
+@include media(map_get($breakpoints, small)) {
+    .site-footer {
+        .social {
+            a {
+                font-size: 4rem;
             }
         }
     }

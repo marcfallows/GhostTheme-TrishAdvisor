@@ -47,3 +47,22 @@
         }
     }
 }
+
+
+@include media(map_get($breakpoints, medium)) {
+    .author-profile {
+
+        .author-content {
+
+            text-align: center;
+            margin-top: 3rem;
+
+            .author-image {
+                width: 150px;
+                height: 150px;
+                float: none;
+                margin: 0 auto 3rem auto;
+            }
+        }
+    }
+}

@@ -9,7 +9,6 @@ $palette-dark: #000;
 
 $main-nav-height: 100px;
 $main-nav-height-stuck: 60px;
-$cover-height: 50vh;
 $main-nav-margin: 20px;
 $main-nav-toggle-size: (
     width: 40px,
@@ -20,6 +19,10 @@ $main-nav-toggle-size: (
 $main-nav-shadow-dims: 1px 1px 10px;
 $main-nav-shadow: $main-nav-shadow-dims rgba($palette-dark, 0.7);
 $main-nav-shadow-light: $main-nav-shadow-dims rgba($palette-light, 0.7);
+
+$cover-height: 50vh;
+$cover-height-medium: 40vh;
+$cover-height-small: 40vh;
 
 $font-family-header: "geometrialight", sans-serif;
 
@@ -32,6 +35,7 @@ $font-family-handwriting: "jennasue";
 $animate-duration-fast: 250ms;
 
 $breakpoints: (
-    mobile: new-breakpoint(max-width 500px),
-    tablet: new-breakpoint(max-width 900px)
+    small: new-breakpoint(max-width 500px),
+    medium: new-breakpoint(max-width 900px),
+    large: new-breakpoint(max-width 1200px)
 );

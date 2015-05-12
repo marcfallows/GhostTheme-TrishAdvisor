@@ -5,15 +5,15 @@
     var $document = $(document);
 
     $document.ready(function () {
-
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
-        $(".nav-toggle").on("click", function(e){
+        $(".nav-toggle, .nav-cover").on("click", function(e){
             e.preventDefault();
-            $("body").toggleClass("nav-opened nav-closed");
+            $("body").toggleClass("nav-opened");
         });
 
-        $(".main-nav").sticky();
+        $(".main-nav").scrolled();
+
     });
 })(jQuery);
