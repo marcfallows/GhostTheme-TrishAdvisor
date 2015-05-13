@@ -276,7 +276,12 @@
                 }
 
                 &.next, &.prev {
+                    text-align: left;
                     float: none;
+                }
+
+                &.prev {
+                    border-top: none;
                 }
             }
             

@@ -1111,7 +1111,10 @@ margin on the iframe, cause it breaks stuff. */
     .post-template .read-next a.read-next-story.next {
       border-bottom: solid 1px #5b1ab2; }
     .post-template .read-next a.read-next-story.next, .post-template .read-next a.read-next-story.prev {
+      text-align: left;
       float: none; }
+    .post-template .read-next a.read-next-story.prev {
+      border-top: none; }
   .post-template .read-next .separator {
     display: none; } }
 
