@@ -1,6 +1,6 @@
 .main-nav {
 
-    @include position(fixed, 0 0 null 0);
+    @include position(absolute, 0 0 null 0);
 
     z-index: 10;
     height: $main-nav-height;
@@ -11,7 +11,7 @@
 
         height: $main-nav-height;
         background: rgba($palette-primary, 0);
-        @include transition(background-color $animate-duration-fast ease-in 0s, height $animate-duration-fast ease-in 0s);
+        @include transition(box-shadow $animate-duration-fast ease-in 0s, background-color $animate-duration-fast ease-in 0s, height $animate-duration-fast ease-in 0s);
 
         ul, li {
             list-style: none;
@@ -38,7 +38,7 @@
                     font-size: $font-size-navigation;
                     padding: 0 3rem;
                     margin-left: 3rem;
-                    text-shadow: $main-nav-shadow;
+                    text-shadow: $shadow;
 
                     @include transition(all $animate-duration-fast ease-in);
                 }
@@ -54,6 +54,8 @@
                 a:focus {
                     background: $palette-primary;
                     color: $palette-primary-alt;
+                    text-shadow: none;
+                    box-shadow: $shadow;
                 }
             }
         }
@@ -64,10 +66,12 @@
     }
 
     &.scrolled {
+        position: fixed;
 
         .nav {
             height: $main-nav-height-stuck;
             background: rgba($palette-primary, 1);
+            box-shadow: $shadow;
 
             ul {
                 li {
@@ -88,6 +92,7 @@
                     a:active,
                     a:focus {
                         color: $palette-light;
+                        box-shadow: none;
                     }
                 }
             }
@@ -110,8 +115,9 @@
                 float: none;
                 background: $palette-primary;
                 padding: $main-nav-height-stuck 0;
+                box-shadow: none;
 
-                @include transition(transform $animate-duration-fast ease-in);
+                @include transition(box-shadow $animate-duration-fast ease-in, transform $animate-duration-fast ease-in);
 
                 li {
                     float: none;
@@ -168,7 +174,7 @@
                             background: $palette-light;
                             width: map_get($main-nav-toggle-size, width);
                             height: map_get($main-nav-toggle-size, thickness);
-                            box-shadow: $main-nav-shadow;
+                            box-shadow: $shadow;
                         }
 
                         $stick-position: floor(map_get($main-nav-toggle-size, height)/2 - map_get($main-nav-toggle-size, thickness));
@@ -208,6 +214,7 @@
         .nav-opened & {
             .nav {
                 background: none;
+                box-shadow: none;
 
                 .nav-cover {
                     display: block;
@@ -220,6 +227,7 @@
 
                 ul {
                     @include transform(translate3d(-240px, 0, 0));
+                    box-shadow: $shadow;
                 }
 
                 .nav-toggle {

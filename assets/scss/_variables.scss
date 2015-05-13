@@ -16,9 +16,8 @@ $main-nav-toggle-size: (
     thickness: 5px
 );
 
-$main-nav-shadow-dims: 1px 1px 10px;
-$main-nav-shadow: $main-nav-shadow-dims rgba($palette-dark, 0.7);
-$main-nav-shadow-light: $main-nav-shadow-dims rgba($palette-light, 0.7);
+$shadow-dims: 1px 1px 8px;
+$shadow: $shadow-dims rgba($palette-dark, 0.5);
 
 $cover-height: 50vh;
 $cover-height-medium: 40vh;
