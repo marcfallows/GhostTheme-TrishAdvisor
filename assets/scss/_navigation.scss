@@ -1,11 +1,9 @@
 .main-nav {
 
-    @include position(absolute, 0 0 null 0);
+    @include position(fixed, 0 0 null 0);
 
     z-index: 10;
     height: $main-nav-height;
-
-    @include transform(translateZ(0));
 
     .nav {
 
@@ -66,7 +64,6 @@
     }
 
     &.scrolled {
-        position: fixed;
 
         .nav {
             height: $main-nav-height-stuck;
@@ -106,9 +103,7 @@
         .nav {
 
             ul {
-                @include position(fixed, 0 0 null 0);
-                height: 100vh;
-                left: 100vw;
+                @include position(fixed, 0 null 0 100vw);
                 width: 240px;
                 @include transform(translate3d(0, 0, 0));
 
@@ -219,11 +214,7 @@
 
                 .nav-cover {
                     display: block;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100vw;
-                    height: 100vh;
+                    @include position(fixed, 0 0 0 0);
                 }
 
                 ul {

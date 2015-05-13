@@ -12,7 +12,9 @@
             className: 'scrolled'
         }, options);
 
-        var cachedTop = $targetElement.offset().top;
+        var cachedTop = $targetElement.css('position') == 'fixed'
+            ? $targetElement.position().top
+            : $targetElement.offset().top;
 
         updateScrolled();
         $window.scroll(updateScrolled);
