@@ -9,7 +9,22 @@
     font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+$icons: (
+        location: "\ea38",
+        stats: "\eb88",
+        menu: "\ec6e",
+        link: "\ec96",
+        arrow-up: "\edb4",
+        arrow-right: "\edb8",
+        arrow-down: "\edbc",
+        arrow-left: "\edc0",
+        facebook: "\eee9",
+        instagram: "\eeec",
+        twitter: "\eeed",
+        feed: "\eef0"
+);
+
+@mixin icon(){
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -23,50 +38,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-location:before {
-    content: "\ea38";
+@mixin icon-content($icon-label) {
+    &::before {
+        content: map_get($icons, $icon-label);
+    }
 }
 
-.icon-stats:before {
-    content: "\eb88";
+[class^="icon-"], [class*=" icon-"] {
+    @include icon();
 }
 
-.icon-menu:before {
-    content: "\ec6e";
-}
-
-.icon-link:before {
-    content: "\ec96";
-}
-
-.icon-arrow-up:before {
-    content: "\edb4";
-}
-
-.icon-arrow-right:before {
-    content: "\edb8";
-}
-
-.icon-arrow-down:before {
-    content: "\edbc";
-}
-
-.icon-arrow-left:before {
-    content: "\edc0";
-}
-
-.icon-facebook:before {
-    content: "\eee9";
-}
-
-.icon-instagram:before {
-    content: "\eeec";
-}
-
-.icon-twitter:before {
-    content: "\eeed";
-}
-
-.icon-feed:before {
-    content: "\eef0";
+@each $icon-label, $content in $icons {
+    .icon-#{$icon-label} {
+        @include icon-content($icon-label);
+    }
 }

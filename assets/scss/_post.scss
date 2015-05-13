@@ -225,10 +225,22 @@
 
             &.next {
                 float: left;
+
+                .label {
+                    &::before {
+                        content: 'Newer:';
+                    }
+                }
             }
 
             &.prev {
                 float: right;
+
+                .label {
+                    &::before {
+                        content: 'Older:';
+                    }
+                }
             }
         }
 
@@ -273,15 +285,27 @@
 
                 &.next {
                     border-bottom: solid 1px $palette-primary;
+
+                    .label {
+                        @include icon-content(arrow-left);
+                    }
                 }
 
                 &.next, &.prev {
-                    text-align: left;
                     float: none;
+                    text-align: left;
+
+                    .label {
+                        @include icon();
+                    }
                 }
 
                 &.prev {
                     border-top: none;
+
+                    .label {
+                        @include icon-content(arrow-right);
+                    }
                 }
             }
             

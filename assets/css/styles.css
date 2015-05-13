@@ -367,40 +367,40 @@ td, th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-location:before {
+.icon-location::before {
   content: "\ea38"; }
 
-.icon-stats:before {
+.icon-stats::before {
   content: "\eb88"; }
 
-.icon-menu:before {
+.icon-menu::before {
   content: "\ec6e"; }
 
-.icon-link:before {
+.icon-link::before {
   content: "\ec96"; }
 
-.icon-arrow-up:before {
+.icon-arrow-up::before {
   content: "\edb4"; }
 
-.icon-arrow-right:before {
+.icon-arrow-right::before {
   content: "\edb8"; }
 
-.icon-arrow-down:before {
+.icon-arrow-down::before {
   content: "\edbc"; }
 
-.icon-arrow-left:before {
+.icon-arrow-left::before {
   content: "\edc0"; }
 
-.icon-facebook:before {
+.icon-facebook::before {
   content: "\eee9"; }
 
-.icon-instagram:before {
+.icon-instagram::before {
   content: "\eeec"; }
 
-.icon-twitter:before {
+.icon-twitter::before {
   content: "\eeed"; }
 
-.icon-feed:before {
+.icon-feed::before {
   content: "\eef0"; }
 
 html {
@@ -1081,8 +1081,12 @@ margin on the iframe, cause it breaks stuff. */
         color: #d5b6ff; }
       .post-template .read-next a.read-next-story.next {
         float: left; }
+        .post-template .read-next a.read-next-story.next .label::before {
+          content: 'Newer:'; }
       .post-template .read-next a.read-next-story.prev {
         float: right; }
+        .post-template .read-next a.read-next-story.prev .label::before {
+          content: 'Older:'; }
     .post-template .read-next .separator {
       position: absolute;
       display: block;
@@ -1110,11 +1114,26 @@ margin on the iframe, cause it breaks stuff. */
     width: 100%; }
     .post-template .read-next a.read-next-story.next {
       border-bottom: solid 1px #5b1ab2; }
+      .post-template .read-next a.read-next-story.next .label::before {
+        content: "\edc0"; }
     .post-template .read-next a.read-next-story.next, .post-template .read-next a.read-next-story.prev {
-      text-align: left;
-      float: none; }
+      float: none;
+      text-align: left; }
+      .post-template .read-next a.read-next-story.next .label, .post-template .read-next a.read-next-story.prev .label {
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
     .post-template .read-next a.read-next-story.prev {
       border-top: none; }
+      .post-template .read-next a.read-next-story.prev .label::before {
+        content: "\edb8"; }
   .post-template .read-next .separator {
     display: none; } }
 
