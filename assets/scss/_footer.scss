@@ -54,9 +54,12 @@
 
 @include media(map_get($breakpoints, small)) {
     .site-footer {
+
+        padding: 4rem 0;
         .social {
             a {
-                font-size: 4rem;
+                margin-bottom: 2rem;
+                font-size: 3rem;
             }
         }
     }
