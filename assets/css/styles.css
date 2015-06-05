@@ -1155,6 +1155,30 @@ margin on the iframe, cause it breaks stuff. */
   .post .post-cover {
     height: 250px; } }
 
+.comments {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 3rem auto 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+  .comments::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .comments .comments-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    background: #fff;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    padding: 3rem; }
+    .comments .comments-content:last-child {
+      margin-right: 0; }
+    .comments .comments-content iframe {
+      margin: 0; }
+
 .page.post {
   margin-bottom: 3rem; }
   .page.post .post-header {
