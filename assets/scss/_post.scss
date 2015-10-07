@@ -311,7 +311,7 @@
                     }
                 }
             }
-            
+
             .separator {
                 display: none;
             }
@@ -320,6 +320,21 @@
 }
 
 @include media(map_get($breakpoints, small)) {
+
+    .post-template {
+        .post-container {
+            padding-left: 0;
+            padding-right: 0;
+
+            .post .post-content {
+                img {
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+            }
+        }
+    }
+    
     .post {
         .post-cover {
             height: 250px;

@@ -1152,6 +1152,12 @@ margin on the iframe, cause it breaks stuff. */
     display: none; } }
 
 @media screen and (max-width: 500px)  {
+  .post-template .post-container {
+    padding-left: 0;
+    padding-right: 0; }
+    .post-template .post-container .post .post-content img {
+      padding-left: 3rem;
+      padding-right: 3rem; }
   .post .post-cover {
     height: 250px; } }
 
@@ -1178,6 +1184,11 @@ margin on the iframe, cause it breaks stuff. */
       margin-right: 0; }
     .comments .comments-content iframe {
       margin: 0; }
+
+@media screen and (max-width: 500px)  {
+  .comments {
+    padding-left: 0;
+    padding-right: 0; } }
 
 .page.post {
   margin-bottom: 3rem; }
