@@ -6,7 +6,7 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}"></header>
+    <header class="main-header post-head {{#has tag="recipe"}}{{#foreach tags}}{{#if image}}" style="background-image: url({{image}}){{/if}}{{/foreach}}{{else}}{{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}{{/has}}"></header>
 
 <main class="content" role="main">
 
