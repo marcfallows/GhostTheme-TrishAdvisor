@@ -1152,6 +1152,9 @@ margin on the iframe, cause it breaks stuff. */
     display: none; } }
 
 @media screen and (max-width: 500px)  {
+  .posts {
+    padding-left: 0;
+    padding-right: 0; }
   .post-template .post-container {
     padding-left: 0;
     padding-right: 0; }
