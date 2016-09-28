@@ -1,4 +1,4 @@
-# TrishAdvisor - Ghost Theme
+# TrishAdvisor - Ghost Theme Test
 
 A ghost theme for [TrishAdvisor](http://trishadvisor.com/).
 
